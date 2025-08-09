@@ -1,62 +1,51 @@
-PyTorch Experiment Tracking
-This repository contains a Jupyter Notebook that demonstrates a professional workflow for tracking machine learning experiments. The project uses PyTorch to fine-tune a pre-trained computer vision model for a custom image classification task and leverages TensorBoard's SummaryWriter for logging and visualization.
+# 📈 PyTorch Experiment Tracking
 
-📝 Project Description
-The primary goal of this project is to classify images into one of three distinct classes: pizza, steak, or sushi. The Jupyter Notebook walks through the entire process, from data acquisition to model training and performance tracking. Key steps include:
+A professional Jupyter Notebook demonstrating best practices for tracking machine learning experiments with PyTorch.  
+This guide covers fine-tuning a pre-trained computer vision model for a custom image classification task, with detailed TensorBoard logging for monitoring progress.
 
-Setup and Dependencies: Installing necessary libraries like torch, torchvision, and torchinfo.
+## ✨ Features
 
-Data Handling: Automating the download and preparation of a custom image dataset.
+- Transfer Learning – Fine-tune a pre-trained EfficientNet_B0 model from torchvision for high performance on a small dataset.
+- Custom Dataset Handling – Automatic download, extraction, and preparation of a custom image dataset.
+- Experiment Logging – Track key metrics like loss and accuracy with torch.utils.tensorboard.SummaryWriter.
+- Model Checkpointing – Automatically save the best-performing model based on validation performance.
+- Reproducible Workflow – Well-structured notebook for reuse in your own projects.
 
-Model Initialization: Using a pre-trained EfficientNet_B0 model from torchvision to leverage transfer learning.
+## 📁 Project Workflow
 
-Model Customization: Freezing the feature extraction layers and modifying the classifier head to align with the three-class problem.
+1. Setup – Install required dependencies and set up the environment.
+2. Data Acquisition – Download and prepare the pizza_steak_sushi dataset.
+3. Data Preparation – Create PyTorch Dataset and DataLoader objects.
+4. Model Configuration – Load EfficientNet_B0 and modify the classifier head.
+5. Training & Evaluation – Train the model, log results to TensorBoard, and save the best model.
+6. Visualization – Launch TensorBoard to explore experiment results.
 
-Training & Logging: Implementing a training loop that utilizes torch.utils.tensorboard.SummaryWriter to log metrics such as loss and accuracy for both training and testing datasets.
+## 📦 Dependencies
 
-Model Checkpointing: The training loop is configured to save the model's state dictionary for the epoch with the best validation performance, ensuring you keep the most effective version of the model.
+Install the following packages:
 
-🚀 Key Sections of the Notebook
-The notebook is logically structured to guide you through the process:
+pip install torch>=1.12 torchvision>=0.13 matplotlib tqdm requests torchinfo tensorboard
 
-Getting Setup: Ensures all required dependencies are installed and essential utility scripts are available.
+## 🚀 Getting Started
 
-Get Data: Defines and uses a download_data function to automatically retrieve and extract the "pizza_steak_sushi" dataset.
+1. Clone the Repository
 
-Create Datasets and DataLoaders: Demonstrates how to prepare the data for training by creating datasets and data loaders, including using automated transforms from the pre-trained model's weights.
+git clone https://github.com/<your-username>/pytorch-experiment-tracking.git
+cd pytorch-experiment-tracking
 
-Get a Pre-trained Model: Details the process of loading EfficientNet_B0, freezing its base layers, and adjusting the final classification layer.
+2. Open the Notebook  
+   Use Google Colab (recommended) or run locally in JupyterLab / VS Code.
 
-Train Model and Track Results: The core of the project, showcasing a training loop with CrossEntropyLoss and Adam optimizer, and integrating SummaryWriter for logging. This section also includes the logic for saving the model with the best validation accuracy.
+3. Run the Cells Sequentially from top to bottom.
 
-View Our Model's Results in TensorBoard: Provides the command to launch TensorBoard, allowing for a visual inspection of the logged metrics and a deeper understanding of the model's performance over time.
+## 📊 Using TensorBoard
 
-📦 Dependencies
-To run this notebook, you will need the following dependencies:
+After training, start TensorBoard with:
 
-torch (>= 1.12)
+tensorboard --logdir runs
 
-torchvision (>= 0.13)
+Then open your browser at http://localhost:6006 to view training curves and metrics.
 
-matplotlib
+## 🙏 Acknowledgements
 
-tqdm
-
-requests
-
-zipfile
-
-pathlib
-
-torchinfo
-
-tensorboard
-
-▶️ How to Run
-Download the Notebook: Clone this repository or download the PyTorch_Experiment_Tracking.ipynb file.
-
-Setup Environment: This notebook is configured for a Google Colab environment with GPU access, but can be adapted for a local setup.
-
-Install Dependencies: The notebook includes pip commands to install the necessary packages. Simply run the cells sequentially.
-
-Execute: Open the notebook in a Jupyter environment (JupyterLab, VS Code, or Google Colab) and run all cells in order.
+This project builds upon the excellent resources and tutorials from the PyTorch ecosystem.
