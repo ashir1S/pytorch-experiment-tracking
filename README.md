@@ -32,7 +32,7 @@ pip install torch>=1.12 torchvision>=0.13 matplotlib tqdm requests torchinfo ten
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/<your-username>/pytorch-experiment-tracking.git
+git clone https://github.com/<ashir1S>/pytorch-experiment-tracking.git
 cd pytorch-experiment-tracking
 ```
 
